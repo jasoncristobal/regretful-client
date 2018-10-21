@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Card from './card';
+import Item from './item';
 
 import './list.css';
 
 export default function List() {
     return (
         <div className="list">
-            <h3>Example list</h3>
-            <Card />
-            <Card />
-            <Card />
+            <h3>List</h3>
+            <Item />
+            <Item />
+            <Item />
         </div>
     );
 }

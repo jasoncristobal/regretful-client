@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Board from './components/board'; // Imported the Board component
+import App from './components/app'; // Imported the App component
+import {Provider} from 'react-redux';
+import store from './store';
 import './index.css';
 
 ReactDOM.render(
-    <Board />, // Rendered the Board component
+    <Provider store={store}>
+        <App /> 
+    </Provider>,
     document.getElementById('root')
 );
