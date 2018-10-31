@@ -2,9 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 
-import LoginForm from './loginform';
-
-export function Home(props) {
+export function LandingPage(props) {
     // If we are logged in redirect straight to the user's dashboard
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
@@ -12,13 +10,12 @@ export function Home(props) {
 
     return (
         <div className="home">
-            <h2>Login</h2>
-            <LoginForm />
-            <h2>Register</h2>
-            <Link to="/register">Click here to sign up</Link>
-            <div>
-                <Link to="/dashboard">When you login, you'll go to dashboard</Link>
-            </div>
+            <h2>Landing Page</h2>
+            Intro text will be here
+            <section>
+                <button><Link to="/login">Login</Link></button>
+                <button><Link to="/register">Register</Link></button>
+            </section>
         </div>
     );
 }
@@ -27,4 +24,4 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(LandingPage);

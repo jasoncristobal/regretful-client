@@ -1,28 +1,43 @@
-import {SAVE_NEW_MISTAKE, SAVE_UPDATED_MISTAKE, READ_MY_MISTAKE,
-        READ_OTHERS_MISTAKE, SAVE_COMMENT} from './actions/index';
+import {SAVE_NEW_MISTAKE_SUCCESS, SAVE_UPDATED_MISTAKE_SUCCESS, READ_MISTAKE,
+        SAVE_COMMENT, GET_MY_MISTAKES, GET_MOST_DISCUSSED, 
+        GET_MOST_RECENT} from '../actions/index';
 
-const initialState = "add this later";
+const initialState = {
+    mistakes: [],
+    mistake: {
+        
+    },
+    comment: {}
+};
 
-export default (state = initialState, action) => {
-    if (action.type === SAVE_NEW_MISTAKE) {
-        // add this later
+export default function reducer(state = initialState, action) {
+    if (action.type === SAVE_NEW_MISTAKE_SUCCESS) {
+        console.log(action)
     }
 
-    if (action.type === SAVE_UPDATED_MISTAKE) {
-        // add this later
+    if (action.type === SAVE_UPDATED_MISTAKE_SUCCESS) {
+        console.log(action)
     }
 
-    if (action.type === READ_MY_MISTAKE) {
-        // add this later
+    if (action.type === READ_MISTAKE) {
+        console.log(action.readMistake)
     }
 
-    if (action.type === READ_OTHERS_MISTAKE) {
-        // add this later
-    }
-    
     if (action.type === SAVE_COMMENT) {
-        // add this later
+        console.log(action.newComment)
     }
     
+    if (action.type === GET_MY_MISTAKES) {
+        console.log(action.getMyMistakes)
+    }
+
+    if (action.type === GET_MOST_DISCUSSED) {
+        console.log(action.getMostDiscussed)
+    }
+
+    if (action.type === GET_MOST_RECENT) {
+        console.log(action.getMostRecent)
+    }
+
     return state;
 };

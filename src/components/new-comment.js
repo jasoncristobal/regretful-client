@@ -1,10 +1,12 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
+import {saveComment} from '../actions';
 
 export class NewComment extends React.Component {
     onSubmit(values) {
         console.log(values);
+        this.props.dispatch(saveComment(values))
     }
     render() {
         return (
@@ -22,6 +24,7 @@ export class NewComment extends React.Component {
 }
 }
 
+const NewCommentRedux = connect()(NewComment)
 export default reduxForm({
     form: 'new-comment'
-})(NewComment);
+})(NewCommentRedux);
