@@ -5,14 +5,14 @@ import {Link} from 'react-router-dom';
 import {getMyMistakes, getMostDiscussed, getMostRecent} from '../actions';
 import './header.css';
 
-export function Header() {
+export function Header(props) {
     const text  = 'Header';
     return (
         <header className="item">
             {text}
-            <button onClick={ (e)=> this.dispatch(getMyMistakes()) }>My Mistakes</button>
-            <button onClick={ (e)=> this.dispatch(getMostDiscussed()) }>Most Discussed</button>
-            <button onClick={ (e)=> this.dispatch(getMostRecent()) }>Most Recent</button>
+            <button onClick={ (e)=> props.dispatch(getMyMistakes()) } type='button'>My Mistakes</button>
+            <button onClick={ (e)=> props.dispatch(getMostDiscussed()) } type='button'>Most Discussed</button>
+            <button onClick={ (e)=> props.dispatch(getMostRecent()) } type='button'>Most Recent</button>
             <div><Link to="/new-item"><button>Add New Mistake</button></Link></div>
         </header>
     );

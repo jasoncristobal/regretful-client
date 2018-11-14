@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {reduxForm, Field} from 'redux-form';
 import {saveNewMistake} from '../actions';
 
@@ -8,6 +9,9 @@ export class NewItem extends React.Component {
     onSubmit(values) {
         console.log(values);
         this.props.dispatch(saveNewMistake(values))
+        .then(()=> {
+            this.props.history.push("/dashboard")
+        })
     }
     render() {
         return (
@@ -34,7 +38,7 @@ export class NewItem extends React.Component {
 }
 }
 
-const NewItemRedux = connect()(NewItem)
+const NewItemRedux = withRouter(connect()(NewItem))
 export default reduxForm({
     form: 'new-item'
 })(NewItemRedux);

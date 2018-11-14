@@ -4,12 +4,11 @@ import {Link} from 'react-router-dom';
 import {readMistake} from '../actions';
 import './item.css';
 
-export default function Item() {
-    const text  = 'Item';
+export default function Item(props) {
     return (
         <div className="item">
-            <button onClick={ (e)=> this.dispatch(readMistake()) }>
-                <Link to="/read">{text}</Link>
+            <button>
+                <Link to={'/read/' + props.mistake.id }>{props.mistake.title}</Link>
             </button>
         </div>
     );

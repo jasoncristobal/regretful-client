@@ -1,6 +1,6 @@
-import {SAVE_NEW_MISTAKE_SUCCESS, SAVE_UPDATED_MISTAKE_SUCCESS, READ_MISTAKE,
-        SAVE_COMMENT, GET_MY_MISTAKES, GET_MOST_DISCUSSED, 
-        GET_MOST_RECENT} from '../actions/index';
+import {SAVE_NEW_MISTAKE_SUCCESS, SAVE_UPDATED_MISTAKE_SUCCESS, READ_MISTAKE_SUCCESS,
+        SAVE_COMMENT_SUCCESS, GET_MY_MISTAKES_SUCCESS, GET_MOST_DISCUSSED_SUCCESS, 
+        GET_MOST_RECENT_SUCCESS} from '../actions/index';
 
 const initialState = {
     mistakes: [],
@@ -19,25 +19,26 @@ export default function reducer(state = initialState, action) {
         console.log(action)
     }
 
-    if (action.type === READ_MISTAKE) {
-        console.log(action.readMistake)
+    if (action.type === READ_MISTAKE_SUCCESS) {
+        return Object.assign({}, state, { mistake: action.mistake })
     }
 
-    if (action.type === SAVE_COMMENT) {
-        console.log(action.newComment)
+    if (action.type === SAVE_COMMENT_SUCCESS) {
+        return Object.assign({}, state, { comment: action.comment })
     }
     
-    if (action.type === GET_MY_MISTAKES) {
-        console.log(action.getMyMistakes)
+    if (action.type === GET_MY_MISTAKES_SUCCESS) {
+        return Object.assign({}, state, { mistakes: action.myMistakes })
     }
 
-    if (action.type === GET_MOST_DISCUSSED) {
-        console.log(action.getMostDiscussed)
+    if (action.type === GET_MOST_DISCUSSED_SUCCESS) {
+        return Object.assign({}, state, { mistakes: action.mostDiscussed })
     }
 
-    if (action.type === GET_MOST_RECENT) {
-        console.log(action.getMostRecent)
+    if (action.type === GET_MOST_RECENT_SUCCESS) {
+        return Object.assign({}, state, { mistakes: action.mostRecent })
     }
+
 
     return state;
 };
