@@ -1,12 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {reduxForm, Field} from 'redux-form';
-import {saveComment} from '../actions';
+import {withRouter} from 'react-router-dom';
+import { readMistake, saveComment} from '../actions';
 
 export class NewComment extends React.Component {
     onSubmit(values) {
-        console.log(values);
-        this.props.dispatch(saveComment(values))
+        console.log(values.comments);
+        this.props.dispatch(saveComment(values.comments, this.props.mistakeID))
+        .then(()=> {
+            this.props.dispatch(readMistake(this.props.mistakeID))
+        })
     }
     render() {
         return (
@@ -15,8 +19,8 @@ export class NewComment extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="new-comment">Add Comment</label>
-                <div><Field name="new-comment" id="new-comment" required type="text" component="textarea" placeholder="Write comment" /></div>
+                <label htmlFor="comments">Add Comment</label>
+                <div><Field name="comments" id="comments" required type="text" component="textarea" placeholder="Write comment" /></div>
                 <button type="submit">Post</button>
             </form>            
         </main>
@@ -24,7 +28,7 @@ export class NewComment extends React.Component {
 }
 }
 
-const NewCommentRedux = connect()(NewComment)
+const NewCommentRedux = withRouter(connect()(NewComment))
 export default reduxForm({
-    form: 'new-comment'
+    form: 'comments'
 })(NewCommentRedux);

@@ -132,16 +132,16 @@ export const readMistake = (mistakeID) => dispatch => {
 };
 
 // Save comment
-export const saveComment = (newComment, mistakeID) => dispatch => {
+export const saveComment = (comments, mistakeID) => dispatch => {
     return (
-        fetch(`${API_BASE_URL}/mistakes/${mistakeID}`, {
+        fetch(`${API_BASE_URL}/mistakes/comment/${mistakeID}`, {
             method: 'POST',
             headers: {
                 'authorization': 'bearer ' + localStorage.authToken,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                newComment
+                comments
             })
         })
             // Reject any requests which don't return a 200 status, creating
@@ -248,6 +248,29 @@ export const getMostRecent = () => dispatch => {
 export const deleteMistake = (mistakeID) => dispatch => {
     return (
         fetch(`${API_BASE_URL}/mistakes/${mistakeID}`, {
+            method: 'DELETE',
+            headers: {
+                'authorization': 'bearer ' + localStorage.authToken,
+                'Content-Type': 'application/json'
+            }
+        })
+            // Reject any requests which don't return a 200 status, creating
+            // errors which follow a consistent format
+            .then(res => normalizeResponseErrors(res))
+            .catch(err => {
+                return Promise.reject(
+                    new SubmissionError({
+                        _error: err.message
+                    })
+                );
+            })
+    );
+};
+
+// Delete comment
+export const deleteComment = (mistakeID, commentID) => dispatch => {
+    return (
+        fetch(`${API_BASE_URL}/mistakes/comment/${mistakeID}/${commentID}`, {
             method: 'DELETE',
             headers: {
                 'authorization': 'bearer ' + localStorage.authToken,
