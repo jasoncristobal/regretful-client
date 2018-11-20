@@ -7,7 +7,7 @@ import TopNavBar from './top-nav-bar';
 import Header from './header';
 import List from './list';
 
-import './dashboard.css';
+import './header.css';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -18,11 +18,11 @@ export class Dashboard extends React.Component {
             return <Redirect to="/" />;
         }
         return (
-            <div className="board">
+            <html className="board">
                 <TopNavBar />
                 <Header />
                 <List />
-            </div>
+            </html>
         );
     }
 }

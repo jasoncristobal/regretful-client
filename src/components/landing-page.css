@@ -1,0 +1,39 @@
+html {
+  background: #99CCFF;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  padding-top: 100px;
+  margin-block-end: 0.1em;
+  color: white;
+  font-family: 'Mina', sans-serif;
+  font-size: 45px;
+  letter-spacing: 4px;
+}
+
+p.intro {
+  font-family: 'Mina', sans-serif;
+  font-size: 20px;
+  color: white;
+  max-width: 400px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+@media only screen and (min-width: 650px) {
+
+    html {
+      background: 
+      linear-gradient(
+        rgba(40,84,99, 0.35), 
+        rgba(40,84,99, 0.35) 
+      ),
+      url(https://raw.githubusercontent.com/jasoncristobal/regretful-client/master/public/backgroundPhoto.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  
+  }

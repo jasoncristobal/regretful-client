@@ -32,7 +32,8 @@ export default function reducer(state = initialState, action) {
     }
 
     if (action.type === GET_MOST_DISCUSSED_SUCCESS) {
-        return Object.assign({}, state, { mistakes: action.mostDiscussed })
+        console.log(action.mostDiscussed[0].comments.length)
+        //return Object.assign({}, state, { mistakes: action.mostDiscussed })
     }
 
     if (action.type === GET_MOST_RECENT_SUCCESS) {

@@ -12,8 +12,7 @@ export function List(props) {
             return (<Item mistake={m} />) 
         })
     return (
-        <div className="list">
-            <h3>List</h3>
+        <div className="list row">
             {items}
         </div>
     );

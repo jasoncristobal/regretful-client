@@ -1,6 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import './landing-page.css';
 
 export function LandingPage(props) {
     // If we are logged in redirect straight to the user's dashboard
@@ -9,9 +10,13 @@ export function LandingPage(props) {
     }
 
     return (
-        <div className="home">
-            <h2>Landing Page</h2>
-            Intro text will be here
+        <div>
+            <h1>REGRETFUL</h1>
+            <p className="intro">
+            Everyone makes mistakes. What matters is using them to improve 
+            yourself. Regretful allows users to anonymously discuss and learn 
+            from each others' bad decisions. 
+            </p>
             <section>
                 <button><Link to="/login">Login</Link></button>
                 <button><Link to="/register">Register</Link></button>

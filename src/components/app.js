@@ -49,7 +49,6 @@ export class App extends React.Component {
             <Router>
             <div className="app">
                 <header>
-                    <h1><Link to="/">Regretful</Link></h1>
                 </header>
                 <main>
                     <Route exact path="/" component={LandingPage} />

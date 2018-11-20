@@ -1,7 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
-  padding: 10px;
-  background: #99CCFF;
 }
 
 h2, h3 {
@@ -61,26 +63,6 @@ input {
 
 /* Non-mobile, grid */
 
-@media only screen and (max-width: 699px) {
-  
-  .row {
-    padding-left: 0px;
-    padding-right: 0px;  
-  }
-
-  .button {
-    width: 100%;
-    text-align: center;
-    float: none;
-  }
-
-  .blurb {
-    padding: 0 20px 0 20px;
-  }
-  input {
-    width: 100% !important;
-  }
-}
 
 @media only screen and (min-width: 700px) {
   

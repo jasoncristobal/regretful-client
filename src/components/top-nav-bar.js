@@ -8,7 +8,7 @@ import './top-nav-bar.css';
 export function TopNavBar(props) {
     const text  = 'Top navigation';
     return (
-        <div className="item">
+        <div className="item row">
             {text}
             <button onClick={event => props.dispatch(clearAuth())}>Logout</button>
         </div>
