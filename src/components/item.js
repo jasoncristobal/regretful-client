@@ -12,10 +12,10 @@ export default function Item(props) {
     } else {
         comCount = null
     }return (
-        <div className="item col-4">
-            <button className="item-button">
-                <Link to={'/read/' + props.mistake.id }>{props.mistake.title} {comCount}</Link>
-            </button>
+        <div className="items col-4">
+            <Link to={'/read/' + props.mistake.id }><button className="item-button">
+                {props.mistake.title} {comCount}
+            </button></Link>
         </div>
     );
 };

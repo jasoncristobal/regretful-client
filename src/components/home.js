@@ -12,13 +12,11 @@ export function Home(props) {
 
     return (
         <div className="home">
+            <h1><Link to="/">REGRETFUL</Link></h1>
             <h2>Login</h2>
             <LoginForm />
             <h2>Register</h2>
             <Link to="/register">Click here to sign up</Link>
-            <div>
-                <Link to="/dashboard">When you login, you'll go to dashboard</Link>
-            </div>
         </div>
     );
 }

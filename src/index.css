@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+html {
+  background: #285463;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0px 10px;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -14,8 +21,13 @@ h2 {
   color: white;
 }
 
-input {
-  display: block;
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button:hover {
+  background-color: #81a4b2;
 }
 
 
@@ -60,9 +72,21 @@ input {
   width: 100%;
 }
 
+@media only screen and (min-width: 650px) {
 
-/* Non-mobile, grid */
+  html {
+    background: 
+    linear-gradient(
+      rgba(40,84,99, 0.35), 
+      rgba(40,84,99, 0.35) 
+    ),
+    url(https://raw.githubusercontent.com/jasoncristobal/regretful-client/master/public/backgroundPhoto.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 
+}
 
 @media only screen and (min-width: 700px) {
   

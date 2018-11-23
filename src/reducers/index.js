@@ -1,6 +1,5 @@
 import {SAVE_NEW_MISTAKE_SUCCESS, SAVE_UPDATED_MISTAKE_SUCCESS, READ_MISTAKE_SUCCESS,
-        SAVE_COMMENT_SUCCESS, GET_MY_MISTAKES_SUCCESS, GET_MOST_DISCUSSED_SUCCESS, 
-        GET_MOST_RECENT_SUCCESS} from '../actions/index';
+        SAVE_COMMENT_SUCCESS, GET_MY_MISTAKES_SUCCESS, GET_MOST_RECENT_SUCCESS, GET_BY_TITLES_SUCCESS} from '../actions/index';
 
 const initialState = {
     mistakes: [],
@@ -31,15 +30,13 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, { mistakes: action.myMistakes })
     }
 
-    if (action.type === GET_MOST_DISCUSSED_SUCCESS) {
-        console.log(action.mostDiscussed[0].comments.length)
-        //return Object.assign({}, state, { mistakes: action.mostDiscussed })
-    }
-
     if (action.type === GET_MOST_RECENT_SUCCESS) {
         return Object.assign({}, state, { mistakes: action.mostRecent })
     }
 
+    if (action.type === GET_BY_TITLES_SUCCESS) {
+        return Object.assign({}, state, { mistakes: action.getByTitles })
+    }
 
     return state;
 };

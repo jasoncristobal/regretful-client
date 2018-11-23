@@ -1,0 +1,15 @@
+.nav-row {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #FAFAFA;
+    padding: 8px;
+    border-radius: 10px 10px 0 0;
+}
+
+.logout-bar {
+    text-align: right;
+}
+
+.logout-btn {
+    font-family: 'mina', sans-serif;
+}

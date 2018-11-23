@@ -1,8 +1,6 @@
-.item {
+.items {
+    padding: 10px 0px 10px 0px; 
     background: #FAFAFA;
-    margin-bottom: 8px;
-    padding: 8px;
-    border-radius: 4px;
 }
 
 .item-button {

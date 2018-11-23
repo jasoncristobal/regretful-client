@@ -18,8 +18,8 @@ export function LandingPage(props) {
             from each others' bad decisions. 
             </p>
             <section>
-                <button><Link to="/login">Login</Link></button>
-                <button><Link to="/register">Register</Link></button>
+                <button className="sign"><Link to="/login">Login</Link></button>
+                <button className="sign"><Link to="/register">Sign Up</Link></button>
             </section>
         </div>
     );

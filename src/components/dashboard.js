@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { getMyMistakes } from '../actions/index';
+import { getMostRecent } from '../actions/index';
 
-import TopNavBar from './top-nav-bar';
+import NavBar from './nav-bar';
 import Header from './header';
 import List from './list';
 
@@ -11,7 +11,7 @@ import './header.css';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
-        this.props.dispatch(getMyMistakes())
+        this.props.dispatch(getMostRecent())
     }
     render() {
         if (!this.props.loggedIn) {
@@ -19,8 +19,8 @@ export class Dashboard extends React.Component {
         }
         return (
             <html className="board">
-                <TopNavBar />
                 <Header />
+                <NavBar />
                 <List />
             </html>
         );

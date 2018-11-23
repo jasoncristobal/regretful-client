@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import {reduxForm, Field} from 'redux-form';
 import {saveNewMistake} from '../actions';
+import Header from './header';
 
 export class NewItem extends React.Component {
     onSubmit(values) {
@@ -16,6 +17,7 @@ export class NewItem extends React.Component {
     render() {
         return (
         <main>
+            <Header />
             <form
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)

@@ -29,16 +29,16 @@ export const getMyMistakesSuccess = (myMistakes) => ({
     myMistakes
 });
 
-export const GET_MOST_DISCUSSED_SUCCESS = 'GET_MOST_DISCUSSED_SUCCESS';
-export const getMostDiscussedSuccess = (mostDiscussed) => ({
-    type: GET_MOST_DISCUSSED_SUCCESS,
-    mostDiscussed
-});
-
 export const GET_MOST_RECENT_SUCCESS = 'GET_MOST_RECENT_SUCCESS';
 export const getMostRecentSuccess = (mostRecent) => ({
     type: GET_MOST_RECENT_SUCCESS,
     mostRecent
+});
+
+export const GET_BY_TITLES_SUCCESS = 'GET_BY_TITLES_SUCCESS';
+export const getByTitlesSuccess = (getByTitles) => ({
+    type: GET_BY_TITLES_SUCCESS,
+    getByTitles
 });
 
 export const DELETE_MISTAKE_SUCCESS = 'DELETE_MISTAKE_SUCCESS';
@@ -190,10 +190,10 @@ export const getMyMistakes = () => dispatch => {
     );
 };
 
-// Get most discussed mistakes
-export const getMostDiscussed = () => dispatch => {
+// Get/sort by titles
+export const getByTitles = () => dispatch => {
     return (
-        fetch(`${API_BASE_URL}/mistakes/discussed`, {
+        fetch(`${API_BASE_URL}/mistakes/titles`, {
             method: 'GET',
             headers: {
                 'authorization': 'bearer ' + localStorage.authToken,
@@ -205,8 +205,7 @@ export const getMostDiscussed = () => dispatch => {
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then(res => {
-                console.log(res)
-                dispatch(getMostDiscussedSuccess(res));
+                dispatch(getByTitlesSuccess(res));
             })
             .catch(err => {
                 return Promise.reject(
