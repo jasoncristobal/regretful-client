@@ -7,7 +7,7 @@
     font-weight: bold;
     font-size: 40px;
     letter-spacing: 4px;  
-    padding: 30px 0px 30px 0px;
+    padding: 30px 0px 30px 10px;
 }
 
 .banner-row {
@@ -28,5 +28,12 @@
     .banner {
         font-size: 60px;
         padding: 40px 0px 40px 0px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .banner {
+        font-size: 44px;
+        padding: 30px 0px 30px 10px;
     }
 }

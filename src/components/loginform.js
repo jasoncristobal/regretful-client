@@ -1,8 +1,12 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+import { Field, reduxForm, focus } from 'redux-form';
+import { Link } from 'react-router-dom';
+
 import Input from './input';
-import {login} from '../actions/auth';
-import {required, nonEmpty} from '../validators';
+import { login } from '../actions/auth';
+import { required, nonEmpty } from '../validators';
+
+import './loginform.css';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
@@ -25,7 +29,7 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="username">Username</label>
+                <p className="login-register"><label htmlFor="username">Username</label></p>
                 <Field
                     component={Input}
                     type="text"
@@ -33,7 +37,7 @@ export class LoginForm extends React.Component {
                     id="username"
                     validate={[required, nonEmpty]}
                 />
-                <label htmlFor="password">Password</label>
+                <p className="login-register padding"><label htmlFor="password">Password</label></p>
                 <Field
                     component={Input}
                     type="password"
@@ -41,9 +45,10 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <div className="padding"><button className="sign" disabled={this.props.pristine || this.props.submitting}>
                     Log in
-                </button>
+                </button></div>
+                <div className="padding"><Link className="underlinedLink" to="/register">No account? Sign up here</Link></div>
             </form>
         );
     }

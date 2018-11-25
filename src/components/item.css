@@ -5,4 +5,22 @@
 
 .item-button {
     width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #7092a4;
+    border: 0;
+    padding: 20px 10px;
+}
+
+.mistake-title {
+    font-family: 'mina', sans-serif;
+    font-size: 22px;
+    line-height: 23px;
+    letter-spacing: 1px;
+}
+
+.comment-line {
+    font-family: 'mina', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
 }

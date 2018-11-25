@@ -1,15 +1,68 @@
 .nav-row {
     max-width: 1000px;
     margin: 0 auto;
+    margin-bottom: -10px;
     background: #FAFAFA;
     padding: 8px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px;
 }
 
 .logout-bar {
     text-align: right;
 }
 
-.logout-btn {
+.logout-btn, .add-new, .add-new-plus, button.nav {
     font-family: 'mina', sans-serif;
+}
+
+.logout-btn {
+    font-size: 16px;
+    padding-right: 5px;
+    cursor: pointer;
+    background-color: white;
+    border: 0;
+}
+
+button.logout-btn:hover {
+    background-color: white;
+}
+
+button.nav {
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: white;
+    background-color: #456f82;
+    border: 0;
+    padding: 4px 6px 2px 8px;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.add-new, .add-new-plus, .logout-btn {
+    color: #7092a4;
+}
+
+.add-new:hover, .logout-btn:hover {
+    color: #456f82;
+    text-decoration: underline;
+}
+
+.add-new-plus {
+    font-size: 30px;
+    vertical-align: -9%;
+} 
+
+/* Responsive */ 
+@media only screen and (max-width: 550px) {  
+    button.nav {
+        width: 100%;
+        margin: 10px 5px 5px 0px;
+        padding: 5px 0px 3px 0px;
+    }
+}
+
+@media only screen and (max-width: 650px) { 
+    button.nav {
+        margin-top: 10px;
+    }
 }

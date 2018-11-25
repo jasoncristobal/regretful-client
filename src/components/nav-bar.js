@@ -12,10 +12,10 @@ export function NavBar(props) {
             <div className="logout-bar">
                 <button className="logout-btn" onClick={event => props.dispatch(clearAuth())}>Logout</button>
             </div>
-            <button onClick={(e) => props.dispatch(getMostRecent())} type='button'>Latest Mistakes</button>
-            <button onClick={(e) => props.dispatch(getMyMistakes())} type='button'>My Mistakes</button>
-            <button onClick={(e) => props.dispatch(getByTitles())} type='button'>Sort By Title</button>
-            <div><Link to="/new-item"><button>Add New Mistake</button></Link></div>
+            <button className="nav" onClick={(e) => props.dispatch(getMostRecent())} type='button'>Latest Mistakes</button>
+            <button className="nav" onClick={(e) => props.dispatch(getMyMistakes())} type='button'>My Mistakes</button>
+            <button className="nav" onClick={(e) => props.dispatch(getByTitles())} type='button'>Sort By Title</button>
+            <div><Link to="/new-item"><span className="add-new-plus">+</span> <span className="add-new">Add New</span></Link></div>
         </nav>
     );
 };

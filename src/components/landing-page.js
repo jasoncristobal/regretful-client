@@ -13,9 +13,8 @@ export function LandingPage(props) {
         <div>
             <h1>REGRETFUL</h1>
             <p className="intro">
-            Everyone makes mistakes. What matters is using them to improve 
-            yourself. Regretful allows users to anonymously discuss and learn 
-            from each others' bad decisions. 
+            Everybody makes mistakes. What matters is learning from them. Regretful 
+            lets everyone anonymously share and discuss what they've learned from bad decisions. 
             </p>
             <section>
                 <button className="sign"><Link to="/login">Login</Link></button>

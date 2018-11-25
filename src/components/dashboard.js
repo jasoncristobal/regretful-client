@@ -18,11 +18,11 @@ export class Dashboard extends React.Component {
             return <Redirect to="/" />;
         }
         return (
-            <html className="board">
+            <section>
                 <Header />
                 <NavBar />
                 <List />
-            </html>
+            </section>
         );
     }
 }

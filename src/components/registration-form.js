@@ -1,9 +1,12 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+import {Link} from 'react-router-dom';
+
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+
 const passwordLength = length({min: 8, max: 72});
 const matchesPassword = matches('password');
 
@@ -23,32 +26,33 @@ export class RegistrationForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="username">Username</label>
+                <p className="login-register"><label htmlFor="username">Username</label></p>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
-                <label htmlFor="password">Password</label>
+                <p className="login-register padding"><label htmlFor="password">Password</label></p>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     validate={[required, passwordLength, isTrimmed]}
                 />
-                <label htmlFor="passwordConfirm">Confirm password</label>
+                <p className="login-register padding"><label htmlFor="passwordConfirm">Confirm password</label></p>
                 <Field
                     component={Input}
                     type="password"
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
                 />
-                <button
-                    type="submit"
+                <div className="padding"><button
+                    className="sign" type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register
-                </button>
+                </button></div>
+                <div className="padding"><Link className="underlinedLink" to="/login">Already signed up? Login here</Link></div>
             </form>
         );
     }

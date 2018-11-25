@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 
 import LandingPage from './landing-page';
-import Home from './home';
+import LoginPage from './login-page';
 import Dashboard from './dashboard';
 import Read from './read';
 import Edit from './edit';
@@ -52,7 +52,7 @@ export class App extends React.Component {
                 </header>
                 <main>
                     <Route exact path="/" component={LandingPage} />
-                    <Route exact path="/login" component={Home} />
+                    <Route exact path="/login" component={LoginPage} />
                     <Route exact path="/register" component={RegistrationPage} />
                     <Route exact path="/dashboard" component={Dashboard} />
                     <Route exact path="/read/:id" component={Read} />

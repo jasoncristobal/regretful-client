@@ -1,12 +1,14 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { reduxForm, Field } from 'redux-form';
-import { withRouter } from 'react-router-dom';
-import { readMistake, saveUpdatedMistake, deleteMistake } from '../actions';
+import React from 'react'
+import { connect } from 'react-redux'
+import { Link, withRouter } from 'react-router-dom'
+import { reduxForm, Field } from 'redux-form'
+import { clearAuth } from '../actions/auth'
 
-import Header from './header';
-import NavBar from './nav-bar';
+import { readMistake, saveUpdatedMistake, deleteMistake } from '../actions'
+
+import Header from './header'
+
+let mistakeID
 
 export class Edit extends React.Component {
     onSubmit(values) {
@@ -24,12 +26,15 @@ export class Edit extends React.Component {
     }
     componentDidMount() {
         this.props.dispatch(readMistake(this.props.match.params.id))
+        mistakeID = this.props.match.params.id
     }
     render() {
         return (
             <main>
                 <Header />
-                <NavBar />
+                <div className="logout-bar">
+                    <button className="logout-btn" onClick={event => this.props.dispatch(clearAuth())}>Logout</button>
+                </div>                
                 <form
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
@@ -45,7 +50,7 @@ export class Edit extends React.Component {
                     <label htmlFor="question3">Question 3</label>
                     <div><Field name="question3" id="question3" required type="text" component="textarea" /></div>
                     <button type="button" onClick={e => this.delete()}>Delete</button>
-                    <button><Link to="/dashboard">Cancel</Link></button>
+                    <button><Link to={'/read/' + mistakeID}>Cancel</Link></button>
                     <button type="submit">Save</button>
                 </form>
             </main>
