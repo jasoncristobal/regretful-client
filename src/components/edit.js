@@ -7,6 +7,8 @@ import { clearAuth } from '../actions/auth'
 import { readMistake, saveUpdatedMistake, deleteMistake } from '../actions'
 
 import Header from './header'
+import './read.css'
+import './edit.css'
 
 let mistakeID
 
@@ -32,27 +34,34 @@ export class Edit extends React.Component {
         return (
             <main>
                 <Header />
-                <div className="logout-bar">
-                    <button className="logout-btn" onClick={event => this.props.dispatch(clearAuth())}>Logout</button>
-                </div>                
-                <form
-                    onSubmit={this.props.handleSubmit(values =>
-                        this.onSubmit(values)
-                    )}>
-                    <label htmlFor="title">Title</label>
-                    <div><Field name="title" id="title" required type="text" component="input" /></div>
-                    <label htmlFor="description">Description</label>
-                    <div><Field name="description" id="description" required type="text" component="textarea" /></div>
-                    <label htmlFor="question1">Question 1</label>
-                    <div><Field name="question1" id="question1" required type="text" component="textarea" /></div>
-                    <label htmlFor="question2">Question 2</label>
-                    <div><Field name="question2" id="question2" required type="text" component="textarea" /></div>
-                    <label htmlFor="question3">Question 3</label>
-                    <div><Field name="question3" id="question3" required type="text" component="textarea" /></div>
-                    <button type="button" onClick={e => this.delete()}>Delete</button>
-                    <button><Link to={'/read/' + mistakeID}>Cancel</Link></button>
-                    <button type="submit">Save</button>
-                </form>
+                <section className="nav-row">
+                    <div className="logout-bar">
+                        <button className="logout-btn" onClick={event => this.props.dispatch(clearAuth())}>Logout</button>
+                    </div>
+                    <form className="bottom-padding"
+                        onSubmit={this.props.handleSubmit(values =>
+                            this.onSubmit(values))}>
+                        <h2 className="item-title"><label htmlFor="title">Title:</label>
+                            <Field className="title" name="title" id="title" required type="text" component="input" />
+                        </h2>
+                        <div className="full-item-edit">
+                            <div className="edit-btn-row">
+                                <button className="edit-btn"><Link className="edit-btn" to={'/read/' + mistakeID}>Cancel</Link></button>
+                                <button className="edit-btn" type="submit">Save</button>
+                            </div>
+                            <h3 className="item-question"><label className="item-question" htmlFor="description">What you regret doing (or not doing)</label></h3>
+                            <div className="left-align"><Field className="item-question" name="description" id="description" required type="text" component="textarea" /></div>
+                            <h3 className="item-question"><label htmlFor="question1">Why you did it (or didn’t)</label></h3>
+                            <div className="left-align"><Field className="item-question" name="question1" id="question1" required type="text" component="textarea" /></div>
+                            <h3 className="item-question"><label htmlFor="question2">   Why it was a mistake</label></h3>
+                            <div className="left-align"><Field className="item-question" name="question2" id="question2" required type="text" component="textarea" /></div>
+                            <h3 className="item-question"><label htmlFor="question3">What you learned / What you can do now</label></h3>
+                            <div className="left-align"><Field className="item-question" name="question3" id="question3" required type="text" component="textarea" /></div>                            
+                            <button className="delete-item" type="button" onClick={e => this.delete()}>Delete</button>
+                            <div className="confirm-delete">Are you sure? (Can't undo)</div>
+                        </div>
+                    </form>
+                </section>
             </main>
         );
     }

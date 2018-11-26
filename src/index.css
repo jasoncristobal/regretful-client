@@ -6,7 +6,6 @@ html {
   background: #285463;
   margin: 0 auto;
   text-align: center;
-  padding: 0px 10px;
 }
 
 body {
@@ -81,13 +80,14 @@ button:hover {
   html {
     background: 
     linear-gradient(
-      rgba(40,84,99, 0.35), 
+      rgba(84, 118, 129, 0.35), 
       rgba(40,84,99, 0.35) 
     ),
     url(https://raw.githubusercontent.com/jasoncristobal/regretful-client/master/public/backgroundPhoto.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    padding: 0px 10px;
   }
 
 }

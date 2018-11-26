@@ -30,19 +30,22 @@ export class Read extends React.Component {
         // Second-person pronoun if it's your items. Third-person for others' items.
         let pronoun
         let owner
+        let deletePermission
         // This determines how to display the comments
         let comments
-        let deletePermission
         if (!this.props.mistake.comments) {
             comments = null
-        } else if (this.props.mistake.user === this.props.currentUser.id) {
-            owner = 'You:'
+        } else if (this.props.mistake.user === this.props.currentUser.id) { 
+            // This means "else if the creator of this item is also the logged-in user"
+            owner = (<div className="your-mistake">(This is your mistake)</div>)
             pronoun = 'you'
-            deletePermission = 'We encourage an open dialogue. However you may delete comments since you’re the author.'
+            deletePermission = 'You are the author. Only you can delete feedback.'
             comments = this.props.mistake.comments.map(c => (
                 <div className="single-comment-div">
-                <p className="single-comment-text">{c.comment}</p>
-                <div className="delete-btn-div"><button className="delete-btn" type="button" onClick={e => this.delete(c._id)}>Delete</button></div>
+                    <p className="single-comment-text">{c.comment}</p>
+                    <div className="delete-btn-div"><button className="delete-btn" type="button" onClick={e => this.delete(c._id)}>Delete</button>
+                        <div className="confirm-delete">Are you sure? (Can't undo)</div>
+                    </div>
                 </div>
             ))
         } else {
@@ -58,19 +61,21 @@ export class Read extends React.Component {
                     <div className="logout-bar">
                         <button className="logout-btn" onClick={event => this.props.dispatch(clearAuth())}>Logout</button>
                     </div>
-                    <h2 className="item-title"><span className="item-title-you">{owner}</span> {this.props.mistake.title}</h2>
+                    <h2 className="item-title">{this.props.mistake.title}</h2>
                     <div className="full-item">
                         <div className="edit-btn-row">
                             <button className="edit-btn"><Link className="edit-btn" to={'/'}>Back</Link></button>
                             {editButton}
                         </div>
-                        <h3 className="item-question">What {pronoun} regret doing (or not doing):</h3><p className="item-content">{this.props.mistake.description}</p>
-                        <h3 className="item-question">Why {pronoun} did it (or didn’t):</h3><p className="item-content">{this.props.mistake.question1}</p>
-                        <h3 className="item-question">Why it was a mistake:</h3><p className="item-content">{this.props.mistake.question2}</p>
-                        <h3 className="item-question">What {pronoun} would do differently, if {pronoun} could, and why:</h3><p className="item-content">{this.props.mistake.question3}</p>
+                        {owner}
+                        <h3 className="item-question">What {pronoun} regret doing (or not doing)</h3><p className="item-content">{this.props.mistake.description}</p>
+                        <h3 className="item-question">Why {pronoun} did it (or didn’t)</h3><p className="item-content">{this.props.mistake.question1}</p>
+                        <h3 className="item-question">Why it was a mistake</h3><p className="item-content">{this.props.mistake.question2}</p>
+                        <h3 className="item-question">What {pronoun} learned / What {pronoun} can do now</h3><p className="item-content">{this.props.mistake.question3}</p>
                     </div>
-                    <p className="discussion">Discussion</p>
-                    {deletePermission} {comments}
+                    <p className="feedback">Feedback</p>
+                    <p className="deletePermission">{deletePermission}</p>
+                    {comments}
                     <NewComment mistakeID={this.props.match.params.id} />
                 </section>
             </main>

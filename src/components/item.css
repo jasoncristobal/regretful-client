@@ -9,14 +9,16 @@
     color: white;
     background-color: #7092a4;
     border: 0;
-    padding: 20px 10px;
+    padding: 20px 20px;
 }
 
 .mistake-title {
     font-family: 'mina', sans-serif;
     font-size: 22px;
-    line-height: 23px;
+    line-height: 25px;
     letter-spacing: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .comment-line {

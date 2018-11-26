@@ -1,0 +1,79 @@
+.full-item-edit { /* Same as .full-item in read.css except for padding */
+    background-color: #def0e6;
+    padding: 10px 10px 0px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+    width: 98%;
+}
+input.title {
+    font-family: 'mina', sans-serif;
+    font-size: 20px;
+    height: 30px;
+    vertical-align: 18%;
+    padding-left: 5px;
+    margin-left: 10px;
+    width: 50%;
+}
+
+textarea.item-question {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    height: 64px;
+    width: 95%;
+    margin: 4px 0 15px 0;
+    border: 1px dotted #7092a4;
+}
+
+button.delete-item {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: right;
+    font-size: 16px;
+    color: red;
+    cursor: pointer;
+    background-color: #def0e6;
+    border: 0;
+    letter-spacing: 1px;
+    margin: 10px 0 20px 0;
+}
+
+button.delete-item:hover {
+    color: white;
+    background-color: red;
+    margin: 10px 0 0px 0;
+}
+
+button.delete-item:hover + .confirm-delete {
+    display: block;
+}
+
+form.bottom-padding, .last-question-new-item {
+    padding-bottom: 30px;
+}
+
+.left-align {
+    text-align: left;
+}
+
+@media only screen and (max-width: 400px) {
+    input.title {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    textarea.item-question {
+        width: 97%;
+    }
+    .full-item-edit {
+        padding-left: 20px;
+    }
+    label.item-question {
+        padding-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    input.title {
+        width: 72%;
+    }
+}

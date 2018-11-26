@@ -6,7 +6,7 @@
     width: 98%;
 }
 
-h2.item-title, h3.item-question, .edit-btn, .discussion {
+h2.item-title, h3.item-question, .edit-btn, .feedback {
     font-family: 'mina', sans-serif;
 }
 
@@ -17,8 +17,15 @@ h2.item-title {
     padding-bottom: 15px;
 }
 
-.item-title-you {
+.your-mistake {
+    text-align: left;
+    font-family: 'mina', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #456f82;
+    padding-bottom: 20px;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 h3.item-question, p.item-content {
@@ -34,11 +41,11 @@ h3.item-question {
 
 p.item-content {
     color: #282424;
-    font-size: 16px;
+    font-size: 18px;
     margin-block-start: 5px;
 }
 
-a.edit-btn, .discussion {
+a.edit-btn, .feedback {
     color: #456f82;
 }
 button.edit-btn {
@@ -61,15 +68,19 @@ button.edit-btn:hover {
     text-align: right;
 }
 
-.left-test {
-    text-align: left;
-}
-
-.discussion {
+.feedback {
     font-size: 22px;
     letter-spacing: 3px;
     font-weight: bold;
     margin-block-end: 7px;
+}
+
+p.deletePermission {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #456f82;
+    margin-block-start: 0;
 }
 
 .single-comment-div {
@@ -79,6 +90,7 @@ button.edit-btn:hover {
     margin: 0 auto;
     margin-bottom: 15px;
     max-width: 540px;
+    border-radius: 10px 10px;
 }
 
 .single-comment-text {
@@ -102,6 +114,18 @@ button.delete-btn {
 button.delete-btn:hover {
     color: white;
     background-color: red;
+}
+
+.confirm-delete {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    color: #456f82;
+    display: none;
+    padding-top: 10px;
+}
+
+button.delete-btn:hover + .confirm-delete {
+    display: block;
 }
 
 /* Responsive */

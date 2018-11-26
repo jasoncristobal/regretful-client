@@ -19,12 +19,12 @@
     font-size: 16px;
     padding-right: 5px;
     cursor: pointer;
-    background-color: white;
+    background-color: #FAFAFA;
     border: 0;
 }
 
 button.logout-btn:hover {
-    background-color: white;
+    background-color: #FAFAFA;
 }
 
 button.nav {
