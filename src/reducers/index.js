@@ -11,11 +11,9 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
     if (action.type === SAVE_NEW_MISTAKE_SUCCESS) {
-        console.log(action)
     }
 
     if (action.type === SAVE_UPDATED_MISTAKE_SUCCESS) {
-        console.log(action)
     }
 
     if (action.type === READ_MISTAKE_SUCCESS) {

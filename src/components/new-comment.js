@@ -8,7 +8,6 @@ import './new-comment.css'
 
 export class NewComment extends React.Component {
     onSubmit(values) {
-        console.log(values.comments);
         this.props.dispatch(saveComment(values.comments, this.props.mistakeID))
             .then(() => {
                 this.props.dispatch(readMistake(this.props.mistakeID))

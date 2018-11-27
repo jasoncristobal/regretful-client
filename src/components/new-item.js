@@ -12,7 +12,6 @@ import './edit.css'
 
 export class NewItem extends React.Component {
     onSubmit(values) {
-        console.log(values);
         this.props.dispatch(saveNewMistake(values))
         .then(()=> {
             this.props.history.push("/dashboard")

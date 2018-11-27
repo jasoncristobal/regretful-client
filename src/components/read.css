@@ -93,12 +93,26 @@ p.deletePermission {
     border-radius: 10px 10px;
 }
 
-.single-comment-text {
+p.single-comment-text {
     font-family: 'Source Sans Pro', sans-serif;
     text-align: left;
     padding: 0px 15px;
     font-size: 16px;
     font-style: italic;
+    margin-block-start: 6px
+}
+
+.comment-date {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
+    margin-left: 15px;
+    font-size: 12px;
+    color: #456f82;
+    letter-spacing: 1px;
+}
+
+.comment-date-mine {
+    float: left;
 }
 
 button.delete-btn {
@@ -132,6 +146,10 @@ button.delete-btn:hover + .confirm-delete {
 @media only screen and (max-width: 650px) { 
     .full-item {
         padding-left: 20px;
+    }
+    h2.item-title {
+        line-height: 40px;
+        margin-top: 12px;
     }
     button.edit-btn {
         padding-bottom: 10px;

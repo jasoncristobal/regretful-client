@@ -14,7 +14,6 @@ let mistakeID
 
 export class Edit extends React.Component {
     onSubmit(values) {
-        console.log(values);
         this.props.dispatch(saveUpdatedMistake(values))
             .then(() => {
                 this.props.history.push("/dashboard")

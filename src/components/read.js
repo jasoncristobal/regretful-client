@@ -35,15 +35,17 @@ export class Read extends React.Component {
         let comments
         if (!this.props.mistake.comments) {
             comments = null
-        } else if (this.props.mistake.user === this.props.currentUser.id) { 
+        } else if (this.props.mistake.user === this.props.currentUser.id) {
             // This means "else if the creator of this item is also the logged-in user"
             owner = (<div className="your-mistake">(This is your mistake)</div>)
             pronoun = 'you'
             deletePermission = 'You are the author. Only you can delete feedback.'
             comments = this.props.mistake.comments.map(c => (
-                <div className="single-comment-div">
+                <div key={c._id} className="single-comment-div">
                     <p className="single-comment-text">{c.comment}</p>
-                    <div className="delete-btn-div"><button className="delete-btn" type="button" onClick={e => this.delete(c._id)}>Delete</button>
+                    <div className="comment-date comment-date-mine">Posted {new Date(c.date).toLocaleDateString()}</div>
+                    <div className="delete-btn-div">
+                        <button className="delete-btn" type="button" onClick={e => this.delete(c._id)}>Delete</button>
                         <div className="confirm-delete">Are you sure? (Can't undo)</div>
                     </div>
                 </div>
@@ -51,7 +53,12 @@ export class Read extends React.Component {
         } else {
             pronoun = 'they'
             comments = this.props.mistake.comments.map(c => (
-                <div className="single-comment-div"><p className="single-comment-text">{c.comment}</p></div>
+                <div key={c._id} className="single-comment-div">
+                    <p className="single-comment-text">{c.comment}</p>
+                    <div className="delete-btn-div">
+                        <div className="comment-date">Posted: {new Date(c.date).toLocaleDateString()}</div>
+                    </div>
+                </div>
             ))
         }
         return (

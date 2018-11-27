@@ -6,10 +6,9 @@ import Item from './item';
 import './list.css';
 
 export function List(props) {
-    console.log(props);
-    const items = props.mistakes.map(m => 
+    const items = props.mistakes.map( (m, index) => 
         { 
-            return (<Item mistake={m} />) 
+            return (<Item key={index} mistake={m} />) 
         })
     return (
         <div className="list row">

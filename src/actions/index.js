@@ -176,11 +176,9 @@ export const getMyMistakes = () => dispatch => {
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then(res => {
-                console.log(res)
                 dispatch(getMyMistakesSuccess(res));
             })
             .catch(err => {
-                console.log(err)
                 return Promise.reject(
                     new SubmissionError({
                         _error: err.message
