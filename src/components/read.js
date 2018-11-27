@@ -56,7 +56,7 @@ export class Read extends React.Component {
                 <div key={c._id} className="single-comment-div">
                     <p className="single-comment-text">{c.comment}</p>
                     <div className="delete-btn-div">
-                        <div className="comment-date">Posted: {new Date(c.date).toLocaleDateString()}</div>
+                        <div className="comment-date">Posted {new Date(c.date).toLocaleDateString()}</div>
                     </div>
                 </div>
             ))

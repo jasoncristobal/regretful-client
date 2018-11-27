@@ -10,3 +10,14 @@ p.login-register {
 .padding {
     padding-top: 10px;
 }
+
+p.demo {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    color: white;
+    margin-block-end: 0;
+}
+
+p.demo-password {
+    margin-block-start: 0;
+}
