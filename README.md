@@ -16,7 +16,7 @@ Home - Desktop
 
 Dashboard - Desktop
 
-![Dashboard desktop](screenshots/Desktop-2.png "Dashboard desktop")
+![Dashboard desktop](screenshots/Desktop-2.jpg "Dashboard desktop")
 
 Dashboard - Mobile
 
