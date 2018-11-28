@@ -28,7 +28,7 @@ export default class Input extends React.Component {
                     {error}
                     {warning}
                 </label>
-                <input className="form-input"
+                <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" className="form-input"
                     {...this.props.input}
                     id={this.props.input.name}
                     type={this.props.type}

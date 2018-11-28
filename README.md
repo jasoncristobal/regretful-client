@@ -27,7 +27,7 @@ Mistake View - Mobile
 ![Mistake view mobile](screenshots/Mobile-2.png "Mistake view mobile")
 
 ## Live Demo
-[Link to Demo](http://regretful-client.herokuapp.com)
+[Link to Demo](https://regretful-client.herokuapp.com)
 
 ## Demo Account
 Username: user
