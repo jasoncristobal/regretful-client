@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link, withRouter} from 'react-router-dom';
 import {reduxForm, Field} from 'redux-form';
 import {saveNewMistake} from '../actions';
-import { clearAuth } from '../actions/auth'
+import { logoutUser } from '../actions/auth'
 
 import Header from './header';
 
@@ -23,7 +23,7 @@ export class NewItem extends React.Component {
                 <Header />
                 <section className="nav-row">
                     <div className="logout-bar">
-                        <button className="logout-btn" onClick={event => this.props.dispatch(clearAuth())}>Logout</button>
+                        <button className="logout-btn" onClick={event => this.props.dispatch(logoutUser())}>Logout</button>
                     </div>
                     <form className="bottom-padding"
                         onSubmit={this.props.handleSubmit(values =>

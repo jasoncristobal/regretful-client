@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 import { reduxForm, Field } from 'redux-form'
-import { clearAuth } from '../actions/auth'
 
 import { readMistake, saveUpdatedMistake, deleteMistake } from '../actions'
+import { logoutUser } from '../actions/auth'
 
 import Header from './header'
 import './read.css'
@@ -35,7 +35,7 @@ export class Edit extends React.Component {
                 <Header />
                 <section className="nav-row">
                     <div className="logout-bar">
-                        <button className="logout-btn" onClick={event => this.props.dispatch(clearAuth())}>Logout</button>
+                        <button className="logout-btn" onClick={event => this.props.dispatch(logoutUser())}>Logout</button>
                     </div>
                     <form className="bottom-padding"
                         onSubmit={this.props.handleSubmit(values =>

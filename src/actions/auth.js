@@ -16,6 +16,11 @@ export const clearAuth = () => ({
     type: CLEAR_AUTH
 });
 
+export const logoutUser = () => dispatch => {
+    localStorage.clear()
+    window.location = '/'
+}
+
 export const AUTH_REQUEST = 'AUTH_REQUEST';
 export const authRequest = () => ({
     type: AUTH_REQUEST

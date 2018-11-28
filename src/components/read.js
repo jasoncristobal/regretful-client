@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { clearAuth } from '../actions/auth'
 
 import Header from './header'
 import NewComment from './new-comment'
@@ -9,6 +8,7 @@ import NewComment from './new-comment'
 import './read.css'
 
 import { readMistake, deleteComment } from '../actions/index';
+import { logoutUser } from '../actions/auth'
 
 export class Read extends React.Component {
     delete(id) {
@@ -66,7 +66,7 @@ export class Read extends React.Component {
                 <Header />
                 <section className="nav-row">
                     <div className="logout-bar">
-                        <button className="logout-btn" onClick={event => this.props.dispatch(clearAuth())}>Logout</button>
+                        <button className="logout-btn" onClick={event => this.props.dispatch(logoutUser())}>Logout</button>
                     </div>
                     <h2 className="item-title">{this.props.mistake.title}</h2>
                     <div className="full-item">
