@@ -41,7 +41,7 @@ export class Edit extends React.Component {
                         onSubmit={this.props.handleSubmit(values =>
                             this.onSubmit(values))}>
                         <h2 className="item-title"><label htmlFor="title">Title:</label>
-                            <Field className="title" name="title" id="title" required type="text" component="input" />
+                            <Field className="title" name="title" id="title" required type="text" component="input" maxlength="40" />
                         </h2>
                         <div className="full-item-edit">
                             <div className="edit-btn-row">

@@ -7,13 +7,18 @@ p.login-register {
     margin-block-end: 0;
 }
 
-.padding {
+.padding-top-10px {
     padding-top: 10px;
+}
+
+.padding-top-30px {
+    padding-top: 30px;
 }
 
 p.demo {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
+    font-style: italic;
     color: white;
     margin-block-end: 0;
 }

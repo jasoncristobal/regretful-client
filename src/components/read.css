@@ -14,7 +14,9 @@ h2.item-title {
     font-size: 36px;
     font-weight: normal;
     color: #467082;
-    padding-bottom: 15px;
+    padding: 0 20px 15px 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .your-mistake {

@@ -14,12 +14,12 @@ export default function Item(props) {
         commentCount = null
     } return (
         <div className="items col-4">
-            <button className="item-button">
-                <Link to={'/read/' + props.mistake.id}>
+            <Link to={'/read/' + props.mistake.id}>
+                <button className="item-button">
                     <div className="mistake-title">{props.mistake.title}</div>
                     <span className="comment-line">{commentCount}</span>
-                </Link>
-            </button>
+                </button>
+            </Link>
         </div>
     );
 };

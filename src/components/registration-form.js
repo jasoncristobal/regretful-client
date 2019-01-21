@@ -33,26 +33,26 @@ export class RegistrationForm extends React.Component {
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
-                <p className="login-register padding"><label htmlFor="password">Password</label></p>
+                <p className="login-register padding-top-10px"><label htmlFor="password">Password</label></p>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     validate={[required, passwordLength, isTrimmed]}
                 />
-                <p className="login-register padding"><label htmlFor="passwordConfirm">Confirm password</label></p>
+                <p className="login-register padding-top-10px"><label htmlFor="passwordConfirm">Confirm password</label></p>
                 <Field
                     component={Input}
                     type="password"
                     name="passwordConfirm"
                     validate={[required, nonEmpty, matchesPassword]}
                 />
-                <div className="padding"><button
+                <div className="padding-top-10px"><button
                     className="sign" type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register
                 </button></div>
-                <div className="padding"><Link className="underlinedLink" to="/login">Already signed up? Login here</Link></div>
+                <div className="padding-top-30px"><Link className="underlinedLink" to="/login">Already signed up? Login here</Link></div>
             </form>
         );
     }

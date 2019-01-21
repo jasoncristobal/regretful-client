@@ -45,10 +45,14 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <div className="padding"><button className="sign" disabled={this.props.pristine || this.props.submitting}>
+                <div className="padding-top-10px"><button className="sign" disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button></div>
-                <div className="padding"><Link className="underlinedLink" to="/register">No account? Sign up here</Link></div>
+                <div className="padding-top-30px">
+                    <Link to="/register">No account? <span className="underlinedLink">Sign up here</span>
+                        <p className="demo-password">or use the demo account below</p>
+                    </Link>
+                </div>
                 <p className="demo">Demo username: user</p><p className="demo demo-password">Demo password: password</p>
             </form>
         );
